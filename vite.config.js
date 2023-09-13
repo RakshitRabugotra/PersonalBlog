@@ -1,11 +1,12 @@
-const path = require('path')
-
-export default {
-  root: path.resolve(__dirname, 'src'),
-  build: {
-    outDir: '../dist'
-  },
-  server: {
-    port: 8080
+export default defineConfig(({ command, mode, ssrBuild }) => {
+  if (command === 'serve') {
+    return {
+      // dev specific config
+    }
+  } else {
+    // command === 'build'
+    return {
+      // build specific config
+    }
   }
-}
+})
